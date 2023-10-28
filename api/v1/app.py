@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # api/v1/app.py
 from flask import Flask
 from models import storage
