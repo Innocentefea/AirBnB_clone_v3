@@ -86,3 +86,56 @@ class TestFileStorage(unittest.TestCase):
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_save(self):
         """Test that save properly saves objects to file.json"""
+    def test_get(self):
+        """Test the get method to retrieve objects by class and ID"""
+        user = User()
+        user.id = 123
+        user.name = "Test User"
+        self.storage.new(user)
+        self.storage.save()
+
+        retrieved_user = self.storage.get(User, 123)
+
+        self.assertEqual(retrieved_user, user)
+
+    def test_get_nonexistent_object(self):
+        """Test the get method with a nonexistent object"""
+        retrieved_user = self.storage.get(User, 999)
+
+        self.assertIsNone(retrieved_user)
+
+    def test_count(self):
+        """Test the count method to count objects by class"""
+        user1 = User()
+        user2 = User()
+        amenity1 = Amenity()
+        amenity2 = Amenity()
+
+        self.storage.new(user1)
+        self.storage.new(user2)
+        self.storage.new(amenity1)
+        self.storage.new(amenity2)
+        self.storage.save()
+
+        user_count = self.storage.count(User)
+        amenity_count = self.storage.count(Amenity)
+
+        self.assertEqual(user_count, 2)
+        self.assertEqual(amenity_count, 2)
+
+    def test_count_no_class(self):
+        """Test the count method without specifying a class"""
+        user1 = User()
+        user2 = User()
+        amenity1 = Amenity()
+        amenity2 = Amenity()
+
+        self.storage.new(user1)
+        self.storage.new(user2)
+        self.storage.new(amenity1)
+        self.storage.new(amenity2)
+        self.storage.save()
+
+        total_count = self.storage.count()
+
+        self.assertEqual(total_count, 4)
