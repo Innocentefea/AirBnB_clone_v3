@@ -16,8 +16,7 @@ def teardown_appcontext(exception):
     storage.close()
 
 @app.errorhandler(404)
-"""Designers are really creative when
-they have to design a “404 page” """
+"""design a “404 page”, a “Not found” """
 def not_found(error):
     response = jsonify({'error': 'Not found'})
     response.status_code = 404
