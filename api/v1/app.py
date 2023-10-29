@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# api/v1/app.py
+""" api/v1/app.py"""
 from flask import Flask
 from models import storage
 from api.v1.views import app_views
@@ -12,6 +12,7 @@ app.register_blueprint(app_views)
 
 @app.teardown_appcontext
 def teardown_appcontext(exception):
+    """close the session after each call"""
     storage.close()
 
 

@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-# api/v1/views/__init__.py
+""" import blueprint
+create app_views
+wilcard import
+"""
 from flask import Blueprint
 
 app_views = Blueprint('app_views', __name__, url_prefix='/api/v1')
