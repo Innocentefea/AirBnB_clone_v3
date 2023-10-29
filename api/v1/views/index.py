@@ -8,11 +8,6 @@ from flask import jsonify
 from models import storage
 
 
-@app_views.route('/status', methods=['GET'])
-def get_status():
-    """return a json status ok"""
-    return jsonify({"status": "OK"})
-
 @app_views.route('/stats', methods=['GET'])
 def get_stats():
     """Create an endpoint that retrieves the number of each objects by type"""
@@ -24,3 +19,9 @@ def get_stats():
     stats['states'] = storage.count('State')
     stats['users'] = storage.count('User')
     return jsonify(stats)
+
+
+@app_views.route('/status', methods=['GET'])
+def get_status():
+    """return a json status ok"""
+    return jsonify({"status": "OK"})
