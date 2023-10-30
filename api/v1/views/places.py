@@ -3,6 +3,7 @@
 all default RESTFul API actions:"""
 
 from flask import jsonify, request, abort
+from models.state import State
 from models import storage
 from models.city import City
 from models.place import Place
