@@ -96,7 +96,8 @@ class TestFileStorage(unittest.TestCase):
 
     @unittest.skipIf(models.storage_t == 'db', "not testing file storage")
     def test_save(self):
-        """Test that save properly saves objects to file.json"""
+        """Test that save properly saves objects to file.json
+        Object """
         storage = FileStorage()
         new_dict = {}
         for key, value in classes.items():
