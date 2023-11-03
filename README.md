@@ -155,7 +155,7 @@ No known bugs at this time.
 
 ## Authors
 Innocent Akpoyibo - [Github](https://github.com/Innocentefea) / [Twitter](https://twitter.com/innocentefea)  
-Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
+Jackson Muiru - [Github](https://github.com/muirujackson) / [Twitter](https://twitter.com/_MuiruJackson)
 
 Second part of Airbnb: Joann Vuong
 ## License
